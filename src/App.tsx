@@ -1,57 +1,29 @@
-import { useReducer } from 'react'
-import { type chyperState, type Action } from './types'
+import ArrowIcon from './components/ArrowIcon'
+import { useCypher } from './hooks/useCypher'
 
 export default function App () {
-  const initialState: chyperState = {
-    from: 'plain',
-    to: 'enctypted',
-    original: '',
-    result: '',
-    loading: false
-  }
+  const { from, to } = useCypher()
 
-  function reducer (state: chyperState, action: Action) {
-    const { type } = action
-
-    if (type === 'SET_FROM') {
-      return {
-        ...state,
-        from: action.payload
-      }
-    }
-
-    if (type === 'SET_TO') {
-      return {
-        ...state,
-        to: action.payload
-      }
-    }
-
-    if (type === 'SET_ORIGINAL') {
-      return {
-        ...state,
-        original: action.payload,
-        result: '',
-        loading: true
-      }
-    }
-
-    if (type === 'SET_RESULT') {
-      return {
-        ...state,
-        result: action.payload,
-        loading: false
-      }
-    }
-
-    return state
-  }
-
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const handleClick = () => {}
 
   return (
-    <main>
-      <h1>wenas</h1>
-    </main>
+    <div className='w-screen h-screen bg-gradient-to-t from-slate-900 via-purple-900 to-slate-900'>
+      <header className='flex text-center items-center justify-center pt-24'>
+        <h1 className='font-extrabold text-7xl text-white'>CAD</h1>
+      </header>
+      <main className='flex justify-around w-3/4 mx-auto mt-12'>
+        <div className='flex flex-col'>
+          <h2 className='text-white font-bold'>{from}</h2>
+        </div>
+
+        <button onClick={handleClick}>
+          <ArrowIcon />
+        </button>
+
+        <div className='flex flex-col'>
+          <h2 className='text-white font-bold'>{to}</h2>
+        </div>
+      </main>
+    </div>
   )
 }
