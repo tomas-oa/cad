@@ -1,3 +1,5 @@
+import { type ENCRYPTED, type PLAIN } from './constants'
+
 export interface chyperState {
   from: string
   to: string
@@ -7,7 +9,10 @@ export interface chyperState {
 }
 
 export type Action =
-  | { type: 'SET_FROM', payload: string }
-  | { type: 'SET_TO', payload: string }
   | { type: 'SET_ORIGINAL', payload: string }
   | { type: 'SET_RESULT', payload: string }
+  | { type: 'INTERCHANGE' }
+
+export type Plain = typeof PLAIN
+export type Encrypted = typeof ENCRYPTED
+export type Mode = Plain | Encrypted

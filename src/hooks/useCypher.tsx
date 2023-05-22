@@ -1,5 +1,5 @@
 import { useReducer } from 'react'
-import { type chyperState, type Action } from '../types'
+import { type chyperState, type Action, type Mode } from '../types'
 
 const initialState: chyperState = {
   from: 'plain',
@@ -12,17 +12,11 @@ const initialState: chyperState = {
 function reducer (state: chyperState, action: Action) {
   const { type } = action
 
-  if (type === 'SET_FROM') {
+  if (type === 'INTERCHANGE') {
     return {
       ...state,
-      from: action.payload
-    }
-  }
-
-  if (type === 'SET_TO') {
-    return {
-      ...state,
-      to: action.payload
+      from: state.to,
+      to: state.from
     }
   }
 
@@ -55,8 +49,7 @@ export function useCypher () {
     loading
   }, dispatch] = useReducer(reducer, initialState)
 
-  const setFrom = (payload: string) => { dispatch({ type: 'SET_FROM', payload }) }
-  const setTo = (payload: string) => { dispatch({ type: 'SET_TO', payload }) }
+  const setInterchange = () => { dispatch({ type: 'INTERCHANGE' }) }
   const setOriginal = (payload: string) => { dispatch({ type: 'SET_ORIGINAL', payload }) }
   const setResult = (payload: string) => { dispatch({ type: 'SET_RESULT', payload }) }
 
@@ -66,8 +59,7 @@ export function useCypher () {
     original,
     result,
     loading,
-    setFrom,
-    setTo,
+    setInterchange,
     setOriginal,
     setResult
   }
