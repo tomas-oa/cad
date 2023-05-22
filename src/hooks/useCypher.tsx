@@ -1,9 +1,9 @@
 import { useReducer } from 'react'
-import { type chyperState, type Action, type Mode } from '../types'
+import { type chyperState, type Action } from '../types'
 
 const initialState: chyperState = {
   from: 'plain',
-  to: 'enctypted',
+  to: 'encrypted',
   original: '',
   result: '',
   loading: false
