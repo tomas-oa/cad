@@ -37,11 +37,11 @@ export default function App () {
 
       <main className='flex flex-col pt-20 lg:pt-64 h-full'>
         <section className='flex justify-around items-center w-11/12 mx-auto'>
-          <h2 className='text-white font-light text-left w-fit'>
+          <h2 className='text-white font-light text-left w-[150px]'>
             {
               from === PLAIN
-                ? 'Plain text message'
-                : 'Encrypted message'
+                ? 'Plain text'
+                : 'Encrypted text'
             }
           </h2>
 
@@ -49,7 +49,7 @@ export default function App () {
             <ArrowIcon />
           </button>
 
-          <h2 className='text-white font-light text-left w-fit'>
+          <h2 className='text-white font-light text-left w-[150px]'>
               {
                 to === PLAIN
                   ? 'Decrypted result'
@@ -60,14 +60,14 @@ export default function App () {
 
         <section className='flex flex-col items-center pt-2'>
           <textarea
-            className='outline-none resize-none border border-[#00eeff] bg-[#030711] rounded-xl text-[#f8fafc] p-2 m-2 w-11/12 h-48 focus:border-purple-800'
+            className='outline-none resize-none border-[1.5px] border-[#1b8f97] bg-[#030711] rounded-xl text-[#f8fafc] p-2 m-2 w-11/12 h-48 focus:border-[#00eeff]'
             placeholder='Type your message here...'
             onChange={(e) => { setOriginal(e.target.value) }}
             value={original}
           ></textarea>
           <div className='relative w-11/12'>
           <textarea
-            className='outline-none resize-none border border-[#00eeff] bg-[#030711] rounded-xl text-[#f8fafc] p-2 m-2 mx-auto w-full h-48'
+            className='outline-none resize-none border border-[#1b8f97] bg-[#030711] rounded-xl text-[#f8fafc] p-2 m-2 mx-auto w-full h-48'
             value={result}
             readOnly
             onChange={(e) => { setResult(e.target.value) }}
