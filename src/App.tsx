@@ -31,7 +31,7 @@ export default function App () {
     <div className='w-screen h-screen bg-gradient-to-t from-gray-700 via-gray-900 to-black flex flex-col items-center justify-center'>
 
       <header className='fixed top-24 w-full flex text-center items-center justify-center'>
-        <img src="../public/schnoz.svg" alt="cad logo oficial" width={'48px'} height={'48px'} />
+        <img src="/public/schnoz.svg" alt="cad logo oficial" width={'48px'} height={'48px'} />
         <h1 className='font-extrabold text-7xl text-white mx-2'>CAD</h1>
       </header>
 
