@@ -9,6 +9,13 @@ const initialState: chyperState = {
   loading: false
 }
 
+// placeholder cipher
+const rot13 = (message: string) => {
+  const originalAlpha = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  const cipher = 'nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM'
+  return message.replace(/[a-z]/gi, letter => cipher[originalAlpha.indexOf(letter)])
+}
+
 function reducer (state: chyperState, action: Action) {
   const { type } = action
 
@@ -16,7 +23,9 @@ function reducer (state: chyperState, action: Action) {
     return {
       ...state,
       from: state.to,
-      to: state.from
+      to: state.from,
+      original: state.result,
+      result: state.original
     }
   }
 
@@ -24,7 +33,7 @@ function reducer (state: chyperState, action: Action) {
     return {
       ...state,
       original: action.payload,
-      result: '',
+      result: rot13(action.payload),
       loading: true
     }
   }
