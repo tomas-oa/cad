@@ -30,12 +30,12 @@ export default function App () {
   return (
     <div className='w-screen h-screen bg-gradient-to-t from-gray-700 via-gray-900 to-black flex flex-col items-center justify-center'>
 
-      <header className='fixed top-24 w-full flex text-center items-center justify-center'>
-        <img src="/images/schnoz.svg" alt="cad logo oficial" width={'48px'} height={'48px'} />
-        <h1 className='font-extrabold text-7xl text-white mx-2'>CAD</h1>
+      <header className='fixed top-6 lg:top-24 w-full flex text-center items-center justify-start lg:justify-center pl-8'>
+        <img className='w-[32px] h-[32px] lg:w-[64px] lg:h-[64px]' src="/images/schnoz.svg" alt="cad logo oficial"/>
+        <h1 className='font-bold text-3xl lg:font-extrabold lg:text-7xl text-white mx-2'>CAD</h1>
       </header>
 
-      <main className='flex justify-center'>
+      <main className='flex justify-around lg:justify-center'>
         <section className='flex flex-col'>
           <h2 className='text-white font-light text-left max-w-lg pb-2'>
             {
