@@ -28,7 +28,7 @@ export default function App () {
   }
 
   return (
-    <div className='w-screen h-screen bg-gradient-to-t from-gray-700 via-gray-900 to-black flex flex-col'>
+    <div className='w-screen h-screen bg-[#030711] flex flex-col'>
 
       <header className='fixed top-6 lg:top-24 w-full flex text-center items-center justify-start lg:justify-center pl-4'>
         <img className='w-[32px] h-[32px] lg:w-[64px] lg:h-[64px]' src="/images/schnoz.svg" alt="cad logo oficial"/>
@@ -60,30 +60,32 @@ export default function App () {
 
         <section className='flex flex-col items-center pt-2'>
           <textarea
-            className='resize-none border-2 border-[#1d283a] bg-[#030711] rounded-xl text-[#f8fafc] p-2 m-2 w-11/12 h-48'
+            className='outline-none resize-none border border-[#00eeff] bg-[#030711] rounded-xl text-[#f8fafc] p-2 m-2 w-11/12 h-48 focus:border-purple-800'
             placeholder='Type your message here...'
             onChange={(e) => { setOriginal(e.target.value) }}
             value={original}
           ></textarea>
+          <div className='relative w-11/12'>
           <textarea
-            className='resize-none border-2 border-[#1d283a] bg-[#070b14] rounded-xl text-[#f8fafc] p-2 m-2 w-11/12 h-48'
+            className='outline-none resize-none border border-[#00eeff] bg-[#030711] rounded-xl text-[#f8fafc] p-2 m-2 mx-auto w-full h-48'
             value={result}
-            disabled
+            readOnly
             onChange={(e) => { setResult(e.target.value) }}
             ref={textareaRef}
           >
           </textarea>
-          <button className='absolute my-[372px] ml-[290px] border-2 rounded-full bg-white' onClick={copyToClipboard}>
+          <button className='absolute border-2 rounded-full bg-white bottom-5 right-2' onClick={copyToClipboard}>
               <CopyIcon />
           </button>
+          </div>
         </section>
       </main>
 
-      <footer className='fixed left-0 bottom-6 lg:bottom-12 w-full text-center'>
+      <footer className='fixed left-0 bottom-6 lg:bottom-12 w-full text-center text-white'>
         <h5 className='text-sm lg:text-base'>
           Made with <span className='text-red-500'>♥</span> by <a href="https://github.com/ivnisc" target='_blank' rel='noreferrer' className='text-blue-500'>ivnisc</a> & <a href='https://github.com/tomas-oa' target='_blank' rel='noreferrer' className='text-blue-500'>tomas-oa</a>
         </h5>
-        <small className='text-xs'>© Copyright 2023 <a className='text-white' href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target='_blank' rel='noreferrer'>Jipi Corp S.A.</a></small>
+        <small className='text-xs'>© Copyright 2023 <a className='text-blue-500' href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target='_blank' rel='noreferrer'>Jipi Corp S.A.</a></small>
       </footer>
 
       <Toaster
