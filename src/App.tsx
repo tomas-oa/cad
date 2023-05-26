@@ -28,62 +28,54 @@ export default function App () {
   }
 
   return (
-    <div className='w-screen h-screen bg-gradient-to-t from-gray-700 via-gray-900 to-black flex flex-col items-center justify-center'>
+    <div className='w-screen h-screen bg-gradient-to-t from-gray-700 via-gray-900 to-black flex flex-col'>
 
-      <header className='fixed top-6 lg:top-24 w-full flex text-center items-center justify-start lg:justify-center pl-8'>
+      <header className='fixed top-6 lg:top-24 w-full flex text-center items-center justify-start lg:justify-center pl-4'>
         <img className='w-[32px] h-[32px] lg:w-[64px] lg:h-[64px]' src="/images/schnoz.svg" alt="cad logo oficial"/>
         <h1 className='font-bold text-3xl lg:font-extrabold lg:text-7xl text-white mx-2'>CAD</h1>
       </header>
 
-      {/* TODO: redesing main section to be more responsive */}
-      <main className=' flex justify-around lg:justify-center'>
-        <section className='flex flex-col'>
-          <h2 className='text-white font-light text-left max-w-lg pb-2'>
+      <main className='flex flex-col pt-20 lg:pt-64 h-full'>
+        <section className='flex justify-around items-center w-11/12 mx-auto'>
+          <h2 className='text-white font-light text-left w-fit'>
             {
               from === PLAIN
-                ? 'Enter your plain message'
-                : 'Enter your encrypted message'
+                ? 'Plain text message'
+                : 'Encrypted message'
             }
           </h2>
-          <textarea
-            className='resize-none border-2 border-[#1d283a] bg-[#030711] rounded-xl text-[#f8fafc] p-2'
-            rows={10}
-            cols={30}
-            placeholder='Type your message here.'
-            onChange={(e) => { setOriginal(e.target.value) }}
-            value={original}
-          ></textarea>
-        </section>
 
-        <section>
-          <button className='mx-12' onClick={() => { setInterchange() } }>
+          <button className='px-4' onClick={() => { setInterchange() } }>
             <ArrowIcon />
           </button>
-        </section>
 
-        <section className='flex flex-col'>
-          <div className='flex pb-2'>
-            <h2 className='text-white font-light text-left max-w-lg pr-2'>
+          <h2 className='text-white font-light text-left w-fit'>
               {
                 to === PLAIN
                   ? 'Decrypted result'
                   : 'Encrypted result'
               }
             </h2>
-            <button onClick={copyToClipboard}>
-              <CopyIcon />
-            </button>
-          </div>
+        </section>
+
+        <section className='flex flex-col items-center pt-2'>
           <textarea
-            className='resize-none border-2 border-[#1d283a] bg-[#070b14] rounded-xl text-[#f8fafc] p-2'
+            className='resize-none border-2 border-[#1d283a] bg-[#030711] rounded-xl text-[#f8fafc] p-2 m-2 w-11/12 h-48'
+            placeholder='Type your message here...'
+            onChange={(e) => { setOriginal(e.target.value) }}
+            value={original}
+          ></textarea>
+          <textarea
+            className='resize-none border-2 border-[#1d283a] bg-[#070b14] rounded-xl text-[#f8fafc] p-2 m-2 w-11/12 h-48'
             value={result}
-            rows={10}
-            cols={30}
             disabled
             onChange={(e) => { setResult(e.target.value) }}
             ref={textareaRef}
           >
           </textarea>
+          <button className='absolute my-[372px] ml-[290px] border-2 rounded-full bg-white' onClick={copyToClipboard}>
+              <CopyIcon />
+          </button>
         </section>
       </main>
 
