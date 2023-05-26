@@ -35,7 +35,8 @@ export default function App () {
         <h1 className='font-bold text-3xl lg:font-extrabold lg:text-7xl text-white mx-2'>CAD</h1>
       </header>
 
-      <main className='flex justify-around lg:justify-center'>
+      {/* TODO: redesing main section to be more responsive */}
+      <main className=' flex justify-around lg:justify-center'>
         <section className='flex flex-col'>
           <h2 className='text-white font-light text-left max-w-lg pb-2'>
             {
@@ -86,11 +87,11 @@ export default function App () {
         </section>
       </main>
 
-      <footer className='fixed left-0 bottom-12 w-full text-center'>
-        <h5>
+      <footer className='fixed left-0 bottom-6 lg:bottom-12 w-full text-center'>
+        <h5 className='text-sm lg:text-base'>
           Made with <span className='text-red-500'>♥</span> by <a href="https://github.com/ivnisc" target='_blank' rel='noreferrer' className='text-blue-500'>ivnisc</a> & <a href='https://github.com/tomas-oa' target='_blank' rel='noreferrer' className='text-blue-500'>tomas-oa</a>
         </h5>
-        <small>© Copyright 2023 <a className='text-white' href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target='_blank' rel='noreferrer'>Jipi Corp S.A.</a></small>
+        <small className='text-xs'>© Copyright 2023 <a className='text-white' href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target='_blank' rel='noreferrer'>Jipi Corp S.A.</a></small>
       </footer>
 
       <Toaster
