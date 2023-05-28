@@ -1,6 +1,6 @@
 import { type ENCRYPTED, type PLAIN } from './constants'
 
-export interface chyperState {
+export interface cypherState {
   from: Mode
   to: Mode
   original: string

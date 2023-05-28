@@ -1,7 +1,7 @@
 import { useReducer } from 'react'
-import { type chyperState, type Action } from '../types'
+import { type cypherState, type Action } from '../types'
 
-const initialState: chyperState = {
+const initialState: cypherState = {
   from: 'plain',
   to: 'encrypted',
   original: '',
@@ -16,7 +16,7 @@ const rot13 = (message: string) => {
   return message.replace(/[a-z]/gi, letter => cipher[originalAlpha.indexOf(letter)])
 }
 
-function reducer (state: chyperState, action: Action) {
+function reducer (state: cypherState, action: Action) {
   const { type } = action
 
   if (type === 'INTERCHANGE') {
