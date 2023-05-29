@@ -30,12 +30,12 @@ export default function App () {
   return (
     <div className='w-screen h-screen bg-[#030711] flex flex-col'>
 
-      <header className='fixed top-6 lg:top-16 w-full flex text-center items-center justify-start lg:justify-center pl-4'>
+      <header className='mt-6 w-full flex text-center items-center justify-start lg:justify-center pl-4'>
         <img className='w-[32px] h-[32px] lg:w-[64px] lg:h-[64px]' src="/images/schnoz.svg" alt="cad logo oficial"/>
         <h1 className='font-bold text-3xl lg:font-extrabold lg:text-7xl text-white mx-2'>CAD</h1>
       </header>
 
-      <main className='flex flex-col pt-20 h-full lg:pt-64'>
+      <main className='flex flex-col pt-10 h-full lg:pt-32'>
         <section className='flex justify-around items-center w-11/12 mx-auto'>
           <h2 className='text-white font-light text-left w-[150px] lg:w-2/5'>
             {
@@ -45,7 +45,7 @@ export default function App () {
             }
           </h2>
 
-          <button className='px-4 fixed' onClick={() => { setInterchange() } }>
+          <button className='px-4' onClick={() => { setInterchange() } }>
             <ArrowIcon />
           </button>
 
@@ -82,8 +82,8 @@ export default function App () {
         </section>
       </main>
 
-      <footer className='fixed left-0 bottom-6 lg:bottom-6 w-full text-center text-white'>
-        <h5 className='text-sm lg:text-base'>
+      <footer className='mb-6 w-full text-center text-white lg:mb-6 text-xs'>
+        <h5 className='lg:text-base'>
           Made with <span className='text-red-500'>♥</span> by <a href="https://github.com/ivnisc" target='_blank' rel='noreferrer' className='text-blue-500'>ivnisc</a> & <a href='https://github.com/tomas-oa' target='_blank' rel='noreferrer' className='text-blue-500'>tomas-oa</a>
         </h5>
         <small className='text-xs'>© Copyright 2023 <a className='text-blue-500' href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target='_blank' rel='noreferrer'>Jipi Corp S.A.</a></small>
