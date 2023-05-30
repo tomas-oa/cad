@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import ArrowIcon from './icons/ArrowIcon'
 import CopyIcon from './icons/CopyIcon'
+import EraserIcon from './icons/EraserIcon'
 import { PLAIN } from '../constants'
 import useCypher from '../hooks/useCypher'
 
@@ -49,16 +50,20 @@ export default function Cypher () {
         </section>
 
         <section className='flex flex-col items-center pt-2 lg:flex-row lg:w-11/12 lg:mx-auto lg:justify-around'>
-          <textarea
-            className='outline-none resize-none border-[1.5px] border-[#1b8f97] bg-[#030711] rounded-xl text-[#f8fafc] p-2 m-2 w-11/12 h-48 hover:border-[#00eeff] hover:transition hover:duration-200   focus:border-[#00eeff] lg:w-2/5 lg:h-80 lg:mx-auto'
-            placeholder='Type your message here...'
-            onChange={(e) => { setOriginal(e.target.value) }}
-            value={original}
-          ></textarea>
-
           <div className='relative w-11/12 lg:w-2/5 lg:mx-auto'>
             <textarea
-              className='outline-none resize-none border border-[#1b8f97] bg-[#030711] rounded-xl text-[#f8fafc] p-2 m-2 mx-auto w-full h-48 lg:w-full lg:h-80'
+              className='outline-none resize-none border-[1.5px] border-[#1b8f97] bg-[#030711] rounded-xl text-[#f8fafc] p-2 m-2 mx-auto w-full h-48 hover:border-[#00eeff] hover:transition hover:duration-200   focus:border-[#00eeff] lg:h-80 lg:mx-auto'
+              placeholder='Type your message here...'
+              onChange={(e) => { setOriginal(e.target.value) }}
+              value={original}
+            ></textarea>
+            <button className='absolute border-2 rounded-full bg-white bottom-5 right-2' onClick={ () => { setOriginal('') } }>
+              <EraserIcon />
+            </button>
+          </div>
+          <div className='relative w-11/12 lg:w-2/5 lg:mx-auto'>
+            <textarea
+              className='outline-none resize-none border border-[#1b8f97] bg-[#030711] rounded-xl text-[#f8fafc] p-2 m-2 mx-auto w-full h-48 lg:h-80'
               value={result}
               readOnly
               onChange={(e) => { setResult(e.target.value) }}
