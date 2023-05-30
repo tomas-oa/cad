@@ -22,6 +22,7 @@ export default function Cypher () {
         .catch((e) => {
           toast.error('Oops! Something went wrong')
           console.error(e)
+          console.log(e)
         })
     }
   }
