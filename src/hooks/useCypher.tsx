@@ -49,7 +49,7 @@ function reducer (state: cypherState, action: Action) {
   return state
 }
 
-export function useCypher () {
+export default function useCypher () {
   const [{
     from,
     to,
