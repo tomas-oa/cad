@@ -27,7 +27,7 @@ export default function Cypher () {
     }
   }
   return (
-    <main className='flex flex-col pt-10 h-full lg:pt-28'>
+    <main className='flex flex-col'>
         <section className='flex justify-around items-center w-11/12 mx-auto'>
           <h2 className='text-white font-light lg:font-normal text-left w-[150px] lg:mx-auto lg:w-2/5'>
             {

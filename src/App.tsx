@@ -7,7 +7,7 @@ export default function App () {
   // TODO: add loading state ? (maybe not) -> use debounce -> call api to encrypt/decrypt w/useEffect
 
   return (
-    <div className='mix-w-screen min-h-screen bg-[#030711] flex flex-col'>
+    <div className='mix-w-screen min-h-screen bg-[#030711] flex flex-col justify-between'>
       <Header />
       <Cypher />
       <Footer />
